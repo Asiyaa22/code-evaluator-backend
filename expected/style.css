@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+}
+.main {
+    font-size: 18px;
+    padding: 10px 15px;
+}
+.main h2{
+    margin: 10px 8px;
+}
+button {
+    all: unset;
+    text-align: center;
+    width: 50px;
+    border: 1px solid green;
+    background-color: #059862;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+.btn:hover {
+    background-color: #11543be3;
+    cursor: pointer;
+}
+.section {
+    border-radius: 5px;
+    padding: inherit;
+    margin: 18px 0px;
+    background-color: #D9EEE1;
+}
+.section > h4 ~ p:nth-child(2n+1) {
+    background-color: #059862;
+}
+.section h4, p{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+h4{
+    font-size: 22px;
+    font-weight: 580;
+}
+.content, .contact {
+    padding: inherit;
+}
+.code {
+    background-color: white;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color: rgb(17, 65, 207);
+    border-left: 4px solid  #059862;
+}
+.contact h2::after {
+    content: ' 🔗';
+}
+form {
+    margin: 8px 0px;
+}
+input {
+    font: inherit;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 5px;
+    width: 280px;
+    height: 35px;
+    color: black;
+    border: 0.5px solid green;
+    outline: none;
+}
+input::placeholder{
+    color: black;
+    opacity: 1;
+}
+input:focus {
+    border: 0.8px dashed black;
+    outline: none;
+    background-color: #059862;
+    color: black;
+}
+a:hover {
+    color: black;
+}
+a:active {
+    color: yellow;
+}
+a:visited {
+    color:#059862;
+} 
+.main h5:last-child {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+.main h5:hover {
+    color: #059862;
+}
+*::selection {
+    background-color: #0b593c;
+    color: white;
+}

@@ -23,9 +23,9 @@ app.post("/evaluate", upload.fields([
   { name: "expected_css", maxCount: 1 }
 ]), async (req, res) => {
   try {
-    const zipFile = req.files["zip_file"]?.[0];
-    const expectedHtml = req.files["expected_html"]?.[0];
-    const expectedCss = req.files["expected_css"]?.[0];
+    const zipFile = req.files["student-submissions.zip"]?.[0];
+    const expectedHtml = req.files["index.html"]?.[0];
+    const expectedCss = req.files["style.css"]?.[0];
     const rubricJson = req.body.rubric;
 
     console.log("FILES RECEIVED:", req.files);
