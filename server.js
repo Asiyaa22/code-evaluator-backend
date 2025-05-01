@@ -11,6 +11,7 @@ const app = express();
 const upload = multer({ dest: "uploads/" });
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
 
 // Serve the results.csv file
 app.use("/outputs", express.static(path.join(process.cwd(), "outputs")));
@@ -26,6 +27,10 @@ app.post("/evaluate", upload.fields([
     const expectedHtml = req.files["expected_html"]?.[0];
     const expectedCss = req.files["expected_css"]?.[0];
     const rubricJson = req.body.rubric;
+
+    console.log("FILES RECEIVED:", req.files);
+    console.log("BODY RECEIVED:", req.body);
+
 
     // Validate required inputs
     if (!zipFile || !expectedHtml || !expectedCss) {
