@@ -22,14 +22,13 @@ app.post("/evaluate", upload.fields([
   { name: "expected_html", maxCount: 1 },
   { name: "expected_css", maxCount: 1 }
 ]), async (req, res) => {
+  console.log("FILES RECEIVED:", req.files);
+  console.log("BODY RECEIVED:", req.body);
   try {
     const zipFile = req.files["student-submissions.zip"]?.[0];
     const expectedHtml = req.files["index.html"]?.[0];
     const expectedCss = req.files["style.css"]?.[0];
     const rubricJson = req.body.rubric;
-
-    console.log("FILES RECEIVED:", req.files);
-    console.log("BODY RECEIVED:", req.body);
 
 
     // Validate required inputs
