@@ -16,6 +16,20 @@ app.use(express.urlencoded({ extended: true }));
 // Serve the results.csv file
 app.use("/outputs", express.static(path.join(process.cwd(), "outputs")));
 
+app.get("/ping", (req, res) => {
+  console.log("✅ Ping route hit!");
+  res.send("pong");
+});
+
+
+//testing
+app.post("/debug-upload", upload.any(), (req, res) => {
+  console.log("🔍 DEBUG FILES:", req.files);
+  console.log("🔍 DEBUG BODY:", req.body);
+  res.json({ message: "Received", files: req.files, body: req.body });
+});
+
+
 // Main route for GPT/API to call
 app.post(
   "/evaluate",
