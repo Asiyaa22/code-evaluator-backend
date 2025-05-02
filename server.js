@@ -39,6 +39,7 @@ app.post(
     { name: "expected_css", maxCount: 1 },
   ]),
   async (req, res) => {
+    console.log("✅ /evaluate endpoint called");
     console.log("FILES RECEIVED:", req.files);
     console.log("BODY RECEIVED:", req.body);
     try {
