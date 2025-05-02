@@ -33,7 +33,11 @@ app.post("/debug-upload", upload.any(), (req, res) => {
 // Main route for GPT/API to call
 app.post(
   "/evaluate",
-  upload.any(),
+  upload.fields([
+    { name: "zip_file", maxCount: 1 },
+    { name: "expected_html", maxCount: 1 },
+    { name: "expected_css", maxCount: 1 },
+  ]),
   async (req, res) => {
     console.log("FILES RECEIVED:", req.files);
     console.log("BODY RECEIVED:", req.body);
